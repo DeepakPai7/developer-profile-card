@@ -1,0 +1,152 @@
+/* 1. Global Reset & Page Alignment */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  /* BONUS: Gradient Background */
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* 2. Box Model & Card Container */
+.profile-card {
+  background-color: #ffffff;
+  /* Increased width to make it wider/less skinny */
+  width: 420px; 
+  max-width: 90%; /* Keeps it responsive on smaller screens */
+  padding: 40px 32px; /* Increased padding to match the wider card */
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  /* BONUS: Smooth card hover transition */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+/* 3. Image & Status Indicator Styling */
+.avatar-container {
+  position: relative; /* Anchor for the absolute status dot */
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.avatar {
+  /* Scaled up the avatar so it doesn't look too small on a wider card */
+  width: 120px; 
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #764ba2; /* Matches the new theme */
+  display: block;
+}
+
+/* BONUS: Green dot for "Available for Work" */
+.status-dot {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  width: 22px; /* Slightly larger dot */
+  height: 22px;
+  background-color: #10b981; /* Emerald green */
+  border: 4px solid #ffffff;
+  border-radius: 50%;
+}
+
+/* 4. Typography & Spacing */
+.name {
+  font-size: 1.5rem; /* Larger font size */
+  color: #1f2937;
+  margin-bottom: 6px;
+}
+
+.title {
+  font-size: 1rem;
+  color: #764ba2;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.bio {
+  font-size: 1rem; /* Slightly larger text for readability */
+  color: #6b7280;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  padding: 0 10px; /* Gives the bio text a little breathing room */
+}
+
+/* 5. Flexbox: Skill Badges */
+.skills {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.badge {
+  background-color: #f3f4f6;
+  color: #374151;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 8px 16px; /* Bulkier badges */
+  border-radius: 20px;
+  transition: all 0.2s ease-in-out;
+  cursor: default;
+}
+
+/* Interactivity: Badge Hover */
+.badge:hover {
+  background-color: #764ba2;
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+/* 6. Flexbox & Interactivity: Buttons */
+.actions {
+  display: flex;
+  gap: 16px;
+}
+
+.btn {
+  flex: 1;
+  text-decoration: none;
+  font-size: 1rem; /* Larger button text */
+  font-weight: 600;
+  padding: 12px 20px; /* Thicker buttons */
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-primary {
+  background-color: #764ba2;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #5a3780;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(118, 75, 162, 0.3);
+}
+
+.btn-secondary {
+  background-color: #ffffff;
+  color: #764ba2;
+  border: 1px solid #764ba2;
+}
+
+.btn-secondary:hover {
+  background-color: #f9fafb;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
